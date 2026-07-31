@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Brand strategy, creative direction, and product narrative for ambitious companies.">
+<meta property="og:title" content="Harrish Mara — Brand & Creative Direction">
+<meta property="og:description" content="Brand strategy, creative direction, and product narrative for ambitious companies.">
+<meta property="og:image" content="https://harrishmara.com/images/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://harrishmara.com/images/og-image.png">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<title>Harrish Mara — Brand & Creative Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060606;--grey:#A6A6A6;--g3:rgba(255,255,255,.08);
+  --f:'Geist',system-ui,-apple-system,sans-serif;--mono:'Space Mono',monospace;
+  --body-size:26px;
+  --head-size:clamp(52px,7vw,104px); /* main headings +5pt */
+  --cs-size:clamp(32px,3.8vw,60px); /* case title +6pt */
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{overflow-x:hidden;}
+body{background:var(--bg);color:#fff;font-family:var(--f);font-weight:300;line-height:1;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;user-select:none;-webkit-user-select:none;pointer-events:none;}
+a,button{-webkit-tap-highlight-color:transparent;cursor:pointer;}
+.page{display:none;}.page.active{display:block;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;}
+.n-brand{display:flex;align-items:center;gap:0;background:none;border:none;touch-action:manipulation;pointer-events:auto;cursor:pointer;}
+.n-brand img{height:34px;width:auto;filter:brightness(0) invert(1);pointer-events:none;margin-right:8px;}
+.n-brand-text{font-size:16px;font-weight:500;color:#fff;white-space:nowrap;pointer-events:none;}
+.n-hbg{background:none;border:none;display:flex;flex-direction:column;gap:7px;align-items:center;justify-content:center;touch-action:manipulation;pointer-events:auto;cursor:pointer;width:48px;height:48px;}
+.n-hbg-l{display:block;width:24px;height:1.5px;background:#fff;transition:all .35s cubic-bezier(.4,0,.2,1);transform-origin:center;pointer-events:none;}
+.n-hbg.open .n-hbg-l:nth-child(1){transform:translateY(4.25px) rotate(45deg);}
+.n-hbg.open .n-hbg-l:nth-child(2){transform:translateY(-4.25px) rotate(-45deg);}
+
+/* ── MENU ── */
+.fmenu{position:fixed;inset:0;z-index:850;background:rgba(6,6,6,.97);backdrop-filter:blur(28px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 52px;opacity:0;pointer-events:none;transition:opacity .4s cubic-bezier(.4,0,.2,1);}
+.fmenu.open{opacity:1;pointer-events:all;}
+.fm-items{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.fm-link{font-size:clamp(44px,7vw,84px);font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.05;background:none;border:none;text-align:center;text-decoration:none;touch-action:manipulation;pointer-events:auto;cursor:pointer;display:block;opacity:0;transform:translateY(20px);transition:color .25s,opacity .42s cubic-bezier(.4,0,.2,1),transform .42s cubic-bezier(.4,0,.2,1);}
+.fmenu.open .fm-link{opacity:1;transform:none;}
+.fmenu.open .fm-link:nth-child(1){transition-delay:.05s;}
+.fmenu.open .fm-link:nth-child(2){transition-delay:.10s;}
+.fmenu.open .fm-link:nth-child(3){transition-delay:.15s;}
+.fm-link:hover{color:var(--grey);}
+/* Bottom left: tagline + talk. Bottom right: links */
+.fm-bottom{position:absolute;bottom:44px;left:52px;right:52px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;opacity:0;transition:opacity .4s .25s;}
+.fmenu.open .fm-bottom{opacity:1;}
+.fm-bottom-left{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.fm-tagline{font-size:13px;font-weight:300;color:var(--grey);line-height:1.5;max-width:280px;}
+.fm-talk{font-size:14px;font-weight:500;color:#fff;background:none;border:none;cursor:pointer;touch-action:manipulation;pointer-events:auto;transition:color .2s;text-align:left;padding:0;}
+.fm-talk:hover{color:var(--grey);}
+.fm-bottom-right{display:flex;gap:28px;align-items:center;}
+.fm-sub-link{font-size:13px;font-weight:400;color:var(--grey);text-decoration:none;background:none;border:none;touch-action:manipulation;pointer-events:auto;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;transition:color .2s;}
+.fm-sub-link:hover{color:#fff;}
+
+/* ── HERO ── */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 52px 72px;}
+.hero-h1{font-size:clamp(44px,7.5vw,118px);font-weight:800;line-height:.92;letter-spacing:-.04em;color:#fff;margin-bottom:52px;margin-top:80px;animation:blurUp 1s cubic-bezier(.4,0,.2,1) .2s both;}
+.hero-h1 .dim{color:var(--grey);}
+@keyframes blurUp{from{opacity:0;filter:blur(16px);transform:translateY(28px);}to{opacity:1;filter:blur(0);transform:none;}}
+.hero-row{margin-bottom:80px;display:flex;justify-content:flex-end;animation:blurUp .9s cubic-bezier(.4,0,.2,1) .4s both;}
+.hero-bottom{display:flex;flex-direction:column;align-items:flex-end;animation:blurUp .9s cubic-bezier(.4,0,.2,1) .55s both;}
+.logo-card{background:#0D0D0D;border:1px solid rgba(255,255,255,.1);border-radius:14px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;width:260px;height:148px;}
+.ls{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .6s ease;padding:10px;}
+.ls.on{opacity:1;}
+.ls img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;}
+.hero-gap{height:clamp(72px,9vh,120px);}
+.hero-tagline{font-size:clamp(24px,2.4vw,30px);font-weight:400;line-height:1.55;max-width:680px;align-self:flex-start;}
+.hero-tagline .wh{color:#fff;}
+.hero-tagline .gr{color:var(--grey);}
+
+/* ── BUTTONS ── */
+.btn-pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;background:#1E1E1E;color:#fff;padding:13px 26px;border:1px solid rgba(255,255,255,.1);border-radius:100px;text-decoration:none;touch-action:manipulation;pointer-events:auto;cursor:pointer;transition:background .25s,color .25s,border-color .25s;font-family:var(--f);}
+.btn-pill:hover{background:#fff;color:#1E1E1E;border-color:#fff;}
+.btn-solid{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;background:#1E1E1E;color:#fff;padding:13px 26px;border:1px solid rgba(255,255,255,.1);border-radius:100px;touch-action:manipulation;pointer-events:auto;cursor:pointer;transition:background .25s,color .25s;font-family:var(--f);}
+.btn-solid:hover{background:#fff;color:#1E1E1E;}
+
+/* ── SECTION HEADING ── */
+.sec-h{font-size:var(--head-size);font-weight:800;line-height:.92;letter-spacing:-.04em;color:#fff;margin-bottom:64px;}
+.sec-h .dim{color:var(--grey);}
+
+/* ── SCROLL BLUR WORDS ── */
+/* Each blurable text element wraps words in .bw spans */
+.bw{display:inline;transition:filter .4s ease,opacity .4s ease;}
+.bw.blur{filter:blur(10px);opacity:.08;}
+
+/* ── SERVICES ── */
+.srv-section{padding:100px 52px;}
+.srv-item{padding:52px 0;max-width:680px;}
+.srv-num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--grey);display:block;margin-bottom:14px;}
+.srv-title{font-size:var(--body-size);font-weight:700;color:#fff;letter-spacing:-.01em;line-height:1.3;margin-bottom:16px;}
+.srv-body{font-size:var(--body-size);line-height:1.65;font-weight:300;color:var(--grey);}
+
+/* ── WORK: 4 sticky cards stacked, scroll-driven cross-dissolve ── */
+.work-section{padding:100px 0 0;}
+.work-heading-wrap{padding:0 52px;margin-bottom:64px;}
+.cases-wrap{position:relative;}
+/* Each card: sticky, full viewport height, stacks via z-index */
+.wcard{
+  position:sticky;top:0;height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;
+}
+.wcard:nth-child(1){z-index:1;}.wcard:nth-child(2){z-index:2;}
+.wcard:nth-child(3){z-index:3;}.wcard:nth-child(4){z-index:4;}
+/* Left text panel */
+.wcard-left{
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:80px 52px;z-index:2;position:relative;
+}
+/* Text + CTA: slide up on exit, slide in from below on enter */
+.wcard-text{
+  transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1);
+  opacity:1;transform:translateY(0);
+}
+.wcard-cta{
+  transition:opacity .5s .08s cubic-bezier(.4,0,.2,1),transform .5s .08s cubic-bezier(.4,0,.2,1);
+  opacity:1;transform:translateY(0);align-self:flex-start;
+}
+/* no exit slide — blur handles it */
+/* Bg colours per card */
+.wcard-ayu .wcard-left{background:#1E5DA8;}
+.wcard-e2e .wcard-left{background:#2962D9;}
+.wcard-str .wcard-left{background:#214FAE;}
+.wcard-msh .wcard-left{background:#6B3FA0;}
+/* Right image panel */
+.wcard-right{position:relative;overflow:hidden;}
+.wcard-img{position:absolute;inset:0;background-size:cover;background-position:center;}
+/* Blend: left colour bleeds into image */
+.wcard-blend{
+  position:absolute;top:0;bottom:0;left:0;width:28%;
+  pointer-events:none;z-index:3;
+}
+.wcard-ayu .wcard-blend{background:linear-gradient(to right,#1E5DA8,transparent);}
+.wcard-e2e .wcard-blend{background:linear-gradient(to right,#2962D9,transparent);}
+.wcard-str .wcard-blend{background:linear-gradient(to right,#214FAE,transparent);}
+.wcard-msh .wcard-blend{background:linear-gradient(to right,#6B3FA0,transparent);}
+/* Gap line between cards */
+.wcard-gap{height:2px;background:var(--bg);position:relative;z-index:10;}
+/* Number + title */
+.wnum{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.45);display:block;margin-bottom:20px;}
+.wtitle{font-size:var(--cs-size);font-weight:700;line-height:1.0;letter-spacing:-.03em;color:#fff;}
+.wtitle .dim{color:rgba(255,255,255,.5);font-weight:400;}
+
+/* ── OUTCOMES ── */
+.out-section{padding:100px 52px;}
+.out-item{padding:48px 0;max-width:680px;}
+.out-item+.out-item{border-top:1px solid var(--g3);}
+.out-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--grey);display:block;margin-bottom:14px;}
+.out-text{font-size:var(--body-size);line-height:1.65;color:var(--grey);font-weight:300;}
+
+/* ── ABOUT ── */
+.about-section{padding:100px 52px;}
+.about-name{font-size:clamp(40px,5vw,72px);font-weight:800;color:#fff;line-height:.9;letter-spacing:-.04em;margin-bottom:10px;}
+.about-role{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:36px;}
+.about-p{font-size:16px;line-height:1.8;color:var(--grey);margin-bottom:14px;font-weight:300;max-width:680px;}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;}
+.tool{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border:1px solid rgba(255,255,255,.1);border-radius:100px;color:var(--grey);transition:all .2s;cursor:pointer;}
+.tool:hover{border-color:rgba(255,255,255,.4);color:#fff;}
+
+/* ── CTA ── */
+.cta-section{padding:130px 52px;}
+.cta-h{font-size:var(--head-size);font-weight:800;line-height:.9;letter-spacing:-.04em;color:#fff;margin-bottom:48px;}
+.cta-h .dim{color:var(--grey);}
+
+/* ── FOOTER ── */
+footer{padding:28px 52px;display:flex;justify-content:center;align-items:center;gap:32px;}
+.f-link{font-size:13px;color:var(--grey);text-decoration:none;transition:color .2s;touch-action:manipulation;pointer-events:auto;background:none;border:none;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;}
+.f-link:hover{color:#fff;}
+
+/* ── REVEAL ── */
+.rv{opacity:0;filter:blur(10px);transform:translateY(16px);transition:opacity .85s cubic-bezier(.4,0,.2,1),filter .85s,transform .85s;}
+.rv.d1{transition-delay:.12s;}.rv.d2{transition-delay:.24s;}.rv.d3{transition-delay:.36s;}
+.rv.in{opacity:1;filter:blur(0);transform:none;}
+
+/* ── SUB NAV ── */
+.sub-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(6,6,6,.88);backdrop-filter:blur(20px);}
+.sub-brand{display:flex;align-items:center;gap:0;background:none;border:none;touch-action:manipulation;pointer-events:auto;cursor:pointer;}
+.sub-brand img{height:34px;width:auto;filter:brightness(0) invert(1);pointer-events:none;margin-right:8px;}
+.sub-brand-text{font-size:16px;font-weight:500;color:#fff;pointer-events:none;}
+.sub-hbg{background:none;border:none;display:flex;flex-direction:column;gap:7px;align-items:center;justify-content:center;touch-action:manipulation;pointer-events:auto;cursor:pointer;width:48px;height:48px;}
+.sub-hbg-l{display:block;width:24px;height:1.5px;background:#fff;transition:all .35s cubic-bezier(.4,0,.2,1);transform-origin:center;pointer-events:none;}
+.sub-hbg.open .sub-hbg-l:nth-child(1){transform:translateY(4.25px) rotate(45deg);}
+.sub-hbg.open .sub-hbg-l:nth-child(2){transform:translateY(-4.25px) rotate(-45deg);}
+
+/* ── CS PAGES ── */
+.cs-page{padding-top:72px;}
+.cs-hero{display:grid;grid-template-columns:1fr 1fr;min-height:72vh;overflow:hidden;}
+.cs-left{display:flex;flex-direction:column;justify-content:flex-end;padding:64px 52px;z-index:2;}
+.cs-right{position:relative;overflow:hidden;}
+.cs-right-img{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.9;}
+.cs-cat{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:20px;display:block;}
+.cs-h1{font-size:clamp(28px,3.8vw,58px);font-weight:800;line-height:.96;letter-spacing:-.03em;color:#fff;}
+.cs-h1 .dim{color:rgba(255,255,255,.5);font-weight:400;}
+.cs-lead-wrap{padding:40px 52px 0;}
+.cs-lead{font-size:clamp(17px,1.9vw,26px);font-weight:400;line-height:1.5;color:rgba(255,255,255,.65);max-width:680px;}
+.cs-body{padding:64px 52px 80px;max-width:880px;}
+.cs-blk{margin-bottom:64px;}
+.cs-h3{font-size:clamp(22px,2.3vw,34px);font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.02em;}
+.cs-p{font-size:16px;line-height:1.88;color:rgba(255,255,255,.65);margin-bottom:12px;font-weight:300;}
+.cs-outcome{padding:32px;margin-top:32px;border-radius:12px;background:rgba(255,255,255,.08);}
+.cs-out-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);display:block;margin-bottom:12px;}
+.cs-out-t{font-size:clamp(17px,1.8vw,24px);font-weight:600;color:#fff;line-height:1.35;}
+.cs-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;margin-bottom:32px;border-radius:8px;}
+.cs-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.cs-vid-d{font-size:14px;line-height:1.7;color:rgba(255,255,255,.5);margin-bottom:18px;font-weight:300;}
+.cs-img-full{width:100%;overflow:hidden;margin:16px 0;border-radius:8px;}
+.cs-img-full img{width:100%;height:auto;display:block;}
+.ss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:32px;border-radius:8px;overflow:hidden;}
+.ss-img{aspect-ratio:16/9;overflow:hidden;position:relative;cursor:pointer;}
+.ss-img img{width:100%;height:100%;object-fit:cover;opacity:.65;transition:opacity .3s;}
+.ss-img:hover img{opacity:1;}
+.ss-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s;}
+.ss-img:hover .ss-ov{opacity:1;}
+.ss-ov span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);}
+.nda-box{border-radius:8px;background:rgba(255,255,255,.06);padding:16px;margin-bottom:16px;}
+.nda-text{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:rgba(255,255,255,.45);}
+
+/* ── CONTACT ── */
+.ct-wrap{padding:120px 52px;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.cf-inp{pointer-events:auto !important;cursor:text;z-index:10;position:relative;}
+.ct-ready{font-size:clamp(30px,4vw,56px);font-weight:800;color:#fff;line-height:1.0;letter-spacing:-.03em;margin-bottom:16px;}
+.ct-sub{font-size:16px;line-height:1.8;color:var(--grey);margin-bottom:28px;font-weight:300;}
+.cd-row{display:flex;gap:16px;padding:14px 0;font-size:14px;border-top:1px solid var(--g3);}
+.cd-k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);flex-shrink:0;width:72px;}
+.cd-v a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s;}
+.cd-v a:hover{color:#fff;}
+.cf-form{display:flex;flex-direction:column;isolation:isolate;position:relative;z-index:10;}
+.cf-g{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.cf-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);}
+.cf-inp{border:none;border-bottom:1px solid rgba(255,255,255,.14);padding:12px 0;font-size:15px;font-weight:300;background:transparent;color:#fff;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none;touch-action:manipulation;pointer-events:auto !important;cursor:text;font-family:var(--f);position:relative;z-index:50;}
+select.cf-inp{cursor:pointer;}
+.cf-inp:focus{border-color:rgba(255,255,255,.5);}
+.cf-inp::placeholder{color:rgba(255,255,255,.2);}
+textarea.cf-inp{height:88px;resize:none;line-height:1.6;cursor:text;}
+select.cf-inp{appearance:none;-webkit-appearance:none;color:rgba(255,255,255,.5) !important;cursor:pointer !important;}
+.cf-sub{width:100%;padding:14px;font-size:13px;font-weight:500;background:#fff;color:#060606;border:none;border-radius:100px;cursor:pointer;margin-top:8px;transition:opacity .2s;touch-action:manipulation;pointer-events:auto;font-family:var(--f);}
+.cf-sub:hover{opacity:.82;}
+
+/* ── LIGHTBOX ── */
+.lightbox{display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.96);align-items:center;justify-content:center;}
+.lightbox.open{display:flex;}
+.lb-img{max-width:92vw;max-height:88vh;object-fit:contain;pointer-events:none;}
+.lb-close{position:absolute;top:20px;right:24px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer;transition:color .2s;}
+.lb-close:hover{color:#fff;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  nav,.sub-nav{padding:0 24px;}
+  .hero,.srv-section,.out-section,.about-section,.cta-section{padding-left:24px;padding-right:24px;}
+  .work-heading-wrap{padding:0 24px;}
+  footer{padding:24px;}
+  .hero-h1{font-size:clamp(38px,9vw,80px);}
+  .hero-bottom{display:flex;flex-direction:row;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+  .logo-card{width:160px;height:90px;flex-shrink:0;}
+  .hero-tagline{flex:1;min-width:200px;}
+  .wcard{grid-template-columns:1fr;height:auto;position:relative;min-height:auto;}
+  .wcard-right{height:48vw;max-height:280px;order:1;}
+  .wcard-blend{display:none;}
+  .wcard-left{padding:32px 24px;order:2;}
+  .cs-hero{grid-template-columns:1fr;}
+  .cs-right{height:44vw;max-height:300px;}
+  .cs-left{padding:40px 24px;}
+  .cs-lead-wrap{padding:28px 24px 0;}
+  .cs-body{padding:48px 24px 64px;}
+  .ct-inner{padding:80px 24px;}
+  .ss-grid{grid-template-columns:1fr 1fr;}
+  .fmenu{padding:80px 24px;}
+  .fm-bottom{left:24px;right:24px;}
+}
+@media(max-width:640px){
+  .fm-link{min-height:56px;display:flex;align-items:center;justify-content:center;padding:8px 20px;}
+  /* Contact form mobile */
+  .ct-inner{padding:100px 24px 60px;}
+  .ct-ready{font-size:clamp(26px,7vw,36px);}
+  .cf-inp{font-size:17px;padding:18px 0;}
+  .cf-sub{width:100%;text-align:center;padding:18px;font-size:15px;align-self:stretch;}
+  textarea.cf-inp{height:120px;}
+  nav,.sub-nav{padding:0 20px;}
+  .hero{padding:0 20px 52px;}
+  .hero-h1{font-size:clamp(36px,10.5vw,64px);}
+  .srv-section,.out-section,.about-section,.cta-section{padding-left:20px;padding-right:20px;}
+  .work-heading-wrap{padding:0 20px;}
+  footer{padding:20px;}
+  .cs-left,.cs-body,.cs-lead-wrap{padding-left:20px;padding-right:20px;}
+  .ct-wrap{padding:80px 20px;}
+  .fmenu{padding:60px 20px;}
+  .fm-bottom{left:20px;right:20px;flex-direction:column;align-items:flex-start;gap:20px;bottom:28px;}
+  .work-left{padding:24px 20px 0;}
+  .wrow{padding:36px 0;}
+  .wr-title{font-size:clamp(24px,7vw,40px)!important;}
+}
+</style>
+</head>
+<body>
+
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lb-close" onclick="closeLB()">✕ Close</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+</div>
+
+<!-- MENU -->
+<div class="fmenu" id="fmenu">
+  <div class="fm-items">
+    <button class="fm-link" type="button" onclick="closeFM();scrollToId('work');">Work</button>
+    <button class="fm-link" type="button" onclick="closeFM();scrollToId('services');">Services</button>
+    <button class="fm-link" type="button" onclick="closeFM();scrollToId('about');">About</button>
+  </div>
+  <div class="fm-bottom">
+    <div class="fm-bottom-left">
+      <p class="fm-tagline">Ready to make your product understood?</p>
+      <button class="fm-talk" type="button" onclick="closeFM();sP('pg-contact');">Let's talk →</button>
+    </div>
+    <div class="fm-bottom-right">
+      <a class="fm-sub-link" href="https://linkedin.com/in/harrishmara" target="_blank" rel="noopener">LinkedIn</a>
+      <button class="fm-sub-link" type="button" onclick="closeFM();sP('pg-contact');">Contact</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div id="main-site" class="page active">
+<nav id="mainNav">
+  <button class="n-brand" onclick="gH()" type="button">
+    <img src="images/logo-transparent.png" alt="HM" draggable="false">
+    <span class="n-brand-text">Harrish Mara</span>
+  </button>
+  <button class="n-hbg" id="hbg" onclick="toggleFM()" type="button" aria-label="Menu">
+    <span class="n-hbg-l"></span><span class="n-hbg-l"></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <h1 class="hero-h1">Complex<br>products<br><span class="dim">Clearly</span><br><span class="dim">communicated</span></h1>
+  <div class="hero-row"><button class="btn-pill" type="button" onclick="scrollToId('work')">View Work</button></div>
+  <div class="hero-bottom">
+    <div class="logo-card" id="logoCard">
+      <div class="ls on" id="ls0"><img src="images/logo-ayusynk-t.png" alt="AyuSynk" draggable="false"></div>
+      <div class="ls" id="ls1"><img src="images/logo-e2e-t.png" alt="E2E Cloud" draggable="false"></div>
+      <div class="ls" id="ls2"><img src="images/logo-curiousjr-t.png" alt="Curious Jr" draggable="false"></div>
+      <div class="ls" id="ls3"><img src="images/logo-myshishu.png" alt="MyShishu" draggable="false"></div>
+    </div>
+    <div class="hero-gap"></div>
+    <p class="hero-tagline blurable" data-blur>
+      <span class="wh">Brand strategy, creative direction, and product narrative for ambitious companies</span>
+      <span class="gr"> building products, platforms, and services.</span>
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="srv-section" id="services">
+  <div class="rv"><h2 class="sec-h blurable" data-blur>Services</h2></div>
+  <div class="srv-item rv d1">
+    <span class="srv-num">01 —</span>
+    <h3 class="srv-title blurable" data-blur>Investor Narrative</h3>
+    <p class="srv-body blurable" data-blur>For founders preparing to raise. I build the brand film, pitch story, and communication foundation that makes your product legible to the right people before you walk into the room.</p>
+  </div>
+  <div class="srv-item rv d2">
+    <span class="srv-num">02 —</span>
+    <h3 class="srv-title blurable" data-blur>Brand Communication</h3>
+    <p class="srv-body blurable" data-blur>For companies where the product is ahead of the communication. I develop the positioning, narrative framework, and creative direction that closes that gap.</p>
+  </div>
+  <div class="srv-item rv d3">
+    <span class="srv-num">03 —</span>
+    <h3 class="srv-title blurable" data-blur>Product Communication</h3>
+    <p class="srv-body blurable" data-blur>For product launches, enterprise campaigns, and content where a complex product needs to reach an audience that doesn't have the patience for a bad first impression.</p>
+  </div>
+</section>
+
+<!-- WORK: 4 sticky cards -->
+<section class="work-section" id="work">
+  <div class="work-heading-wrap rv">
+    <h2 class="sec-h blurable" data-blur>Work</h2>
+  </div>
+  <div class="cases-wrap">
+    <div class="wcard wcard-ayu" id="wc0">
+      <div class="wcard-left">
+        <div class="wcard-text"><span class="wnum">01/</span><h3 class="wtitle">AyuSynk <span class="dim">Communicating an AI-enabled Healthcare Product</span></h3></div>
+        <button class="btn-pill wcard-cta" onclick="sP('pg-ayusynk')" type="button">View Work</button>
+      </div>
+      <div class="wcard-right"><div class="wcard-img" style="background-image:url('images/ayusynk-film-frame.png');"></div><div class="wcard-blend"></div></div>
+    </div>
+    <div class="wcard-gap"></div>
+    <div class="wcard wcard-e2e" id="wc1">
+      <div class="wcard-left">
+        <div class="wcard-text"><span class="wnum">02/</span><h3 class="wtitle">E2E Cloud <span class="dim">Communicating AI Infrastructure</span></h3></div>
+        <button class="btn-pill wcard-cta" onclick="sP('pg-e2e-comm')" type="button">View Work</button>
+      </div>
+      <div class="wcard-right"><div class="wcard-img" style="background-image:url('images/e2e-powering.jpg');"></div><div class="wcard-blend"></div></div>
+    </div>
+    <div class="wcard-gap"></div>
+    <div class="wcard wcard-str" id="wc2">
+      <div class="wcard-left">
+        <div class="wcard-text"><span class="wnum">03/</span><h3 class="wtitle">E2E Cloud <span class="dim">Thinking Through a Category</span></h3></div>
+        <button class="btn-pill wcard-cta" onclick="sP('pg-e2e-strategy')" type="button">View Work</button>
+      </div>
+      <div class="wcard-right"><div class="wcard-img" style="background-image:url('images/e2e-ecosystem.jpg');"></div><div class="wcard-blend"></div></div>
+    </div>
+    <div class="wcard-gap"></div>
+    <div class="wcard wcard-msh" id="wc3">
+      <div class="wcard-left">
+        <div class="wcard-text"><span class="wnum">04/</span><h3 class="wtitle">MyShishu <span class="dim">Building a Content Production System</span></h3></div>
+        <button class="btn-pill wcard-cta" onclick="sP('pg-myshishu')" type="button">View Work</button>
+      </div>
+      <div class="wcard-right"><div class="wcard-img" style="background-image:url('images/myshishu-screenshot.png');background-position:center top;"></div><div class="wcard-blend"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="out-section">
+  <div class="rv"><h2 class="sec-h blurable" data-blur>Not testimonials. <span class="dim">Facts.</span></h2></div>
+  <div class="out-item rv d1">
+    <span class="out-lbl">AyuSynk · MedTech</span>
+    <p class="out-text blurable" data-blur>Brand film used in investor presentations. The company received funding. The film remains the lead brand asset on the AyuSynk homepage today.</p>
+  </div>
+  <div class="out-item rv d2">
+    <span class="out-lbl">E2E Cloud · AI Infrastructure</span>
+    <p class="out-text blurable" data-blur>Developed communication assets, narrative frameworks, and educational content during a period of rapid category evolution.</p>
+  </div>
+  <div class="out-item rv d3">
+    <span class="out-lbl">MyShishu · Education</span>
+    <p class="out-text blurable" data-blur>60+ educational content assets delivered. 95% stakeholder approval rating across curriculum and product teams.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="rv"><h2 class="sec-h blurable" data-blur>About</h2></div>
+  <div class="rv d1">
+    <h2 class="about-name">Harrish Mara</h2>
+    <div class="about-role">Brand Strategy · Creative Direction · Product Narrative</div>
+    <p class="about-p">I help companies communicate complex products through brand strategy, creative direction, and product narrative.</p>
+    <p class="about-p">My work sits at the intersection of audience understanding, communication systems, and creative execution.</p>
+    <p class="about-p">Over four years across MedTech, AI infrastructure, and education, I've led brand films, product communication, and narrative frameworks for founders and leadership teams building complex products.</p>
+    <div class="tools"><span class="tool">Narrative Strategy</span><span class="tool">Brand Communication</span><span class="tool">Product Communication</span><span class="tool">Campaign Development</span><span class="tool">Veo</span><span class="tool">Nano Banana</span><span class="tool">HeyGen</span><span class="tool">ElevenLabs</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="rv">
+    <h2 class="cta-h">Your product<br>deserves to be<br><span class="dim">understood.</span></h2>
+    <button class="btn-solid" onclick="sP('pg-contact')" type="button">Let's talk →</button>
+  </div>
+</section>
+
+<footer>
+  <a href="https://linkedin.com/in/harrishmara" target="_blank" rel="noopener" class="f-link">LinkedIn</a>
+  <button class="f-link" onclick="sP('pg-contact')" type="button">Contact</button>
+</footer>
+</div>
+
+<!-- CASE STUDIES -->
+<div id="pg-ayusynk" class="page">
+<nav class="sub-nav" style="background:rgba(30,93,168,.92);"><button class="sub-brand" onclick="gH()" type="button"><img src="images/logo-transparent.png" alt="HM" draggable="false"><span class="sub-brand-text">Harrish Mara</span></button><button class="sub-hbg" id="hbg2" onclick="toggleFM()" type="button"><span class="sub-hbg-l"></span><span class="sub-hbg-l"></span></button></nav>
+<div class="cs-page" style="background:#1E5DA8;"><div class="cs-hero"><div class="cs-left"><span class="cs-cat">MedTech · Brand Film · Website Design Direction · IIT Bombay Backed</span><h1 class="cs-h1">AyuSynk <span class="dim">Communicating an AI-enabled Healthcare Product</span></h1></div><div class="cs-right"><div class="cs-right-img" style="background-image:url('images/ayusynk-film-frame.png');"></div></div></div>
+<div class="cs-lead-wrap"><p class="cs-lead">How a three-section narrative structure helped translate a complex AI medical device into a brand story that worked across investor presentations, website communication, and product storytelling.</p></div>
+<div class="cs-body">
+<div class="cs-blk"><h3 class="cs-h3">The Problem</h3><p class="cs-p">AyuSynk was building an AI-enabled digital stethoscope backed by IIT Bombay. Technically sophisticated — but the communication was fragmented. They needed one film that worked as investor pitch, website hero, and product vision — without feeling like any one of them specifically.</p></div>
+<div class="cs-blk"><h3 class="cs-h3">The Thinking</h3><p class="cs-p">I developed a three-section narrative structure: motion graphics to establish the technology logic, visual overlays showing the product in real clinical context, and real footage to anchor it in human outcomes.</p></div>
+<div class="cs-blk"><h3 class="cs-h3">What Was Built</h3><p class="cs-p">A flagship brand vision film — developed from narrative structure through production direction and delivery. Alongside the film, I led the design direction for the AyuSynk website revamp.</p><div class="cs-outcome"><span class="cs-out-lbl">Outcome</span><div class="cs-out-t">The film was used in investor presentations. The company received funding. It remains the lead brand asset on the AyuSynk homepage today.</div></div></div>
+<div class="cs-blk"><h3 class="cs-h3">Brand Vision Film</h3><p class="cs-vid-d">The film that worked simultaneously as investor pitch, website hero, and product vision.</p><div class="cs-embed"><iframe src="https://www.youtube.com/embed/L9McYmasnnA?rel=0" title="AyuSynk" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div><h3 class="cs-h3">Device App Explainer</h3><p class="cs-vid-d">Translating complex device functionality into a clear walkthrough for clinicians.</p><div class="cs-embed"><iframe src="https://www.youtube.com/embed/TJddEpUZ3vo?rel=0" title="AyuSynk App" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div></div>
+<div class="cs-blk"><h3 class="cs-h3">Website Design Direction</h3><div class="cs-img-full"><img src="images/ayusynk-website.png" alt="AyuSynk Website" draggable="false"></div></div>
+</div><footer><a href="https://linkedin.com/in/harrishmara" target="_blank" rel="noopener" class="f-link">LinkedIn</a><button class="f-link" onclick="sP('pg-contact')" type="button">Contact</button></footer></div></div>
+
+<div id="pg-e2e-comm" class="page">
+<nav class="sub-nav" style="background:rgba(41,98,217,.92);"><button class="sub-brand" onclick="gH()" type="button"><img src="images/logo-transparent.png" alt="HM" draggable="false"><span class="sub-brand-text">Harrish Mara</span></button><button class="sub-hbg" id="hbg3" onclick="toggleFM()" type="button"><span class="sub-hbg-l"></span><span class="sub-hbg-l"></span></button></nav>
+<div class="cs-page" style="background:#2962D9;"><div class="cs-hero"><div class="cs-left"><span class="cs-cat">AI Infrastructure · Product Communication · Narrative Input · Competitive Analysis</span><h1 class="cs-h1">E2E Cloud <span class="dim">Communicating AI Infrastructure</span></h1></div><div class="cs-right"><div class="cs-right-img" style="background-image:url('images/e2e-powering.jpg');"></div></div></div>
+<div class="cs-lead-wrap"><p class="cs-lead">How audience-first communication structures and competitive category analysis helped make complex AI infrastructure products easier to understand across campaigns, explainers, and product content.</p></div>
+<div class="cs-body">
+<div class="cs-blk"><h3 class="cs-h3">The Problem</h3><p class="cs-p">E2E Cloud operates in one of the fastest-moving categories in technology: AI infrastructure. The challenge was communicating increasingly complex products in a way that different audiences could quickly understand. Most AI infrastructure content opens with specifications and rewards patience — which doesn't work for business leads who control the budget.</p></div>
+<div class="cs-blk"><h3 class="cs-h3">The Thinking</h3><p class="cs-p">Infrastructure products are rarely differentiated by specifications alone. Across leading AI infrastructure providers, the consistent gaps were weak discovery hooks and feature-first messaging.</p></div>
+<div class="cs-blk"><h3 class="cs-h3">What Was Built</h3><p class="cs-p">Product communication videos, technical explainers, a competitive video communication analysis, a strategic brief on emerging AI production technology, and AI-assisted production workflows using Veo, HeyGen, Nano Banana, and ElevenLabs.</p><div class="cs-outcome"><span class="cs-out-lbl">Outcome</span><div class="cs-out-t">Developed communication assets, narrative frameworks, and educational content during a period of rapid category evolution.</div></div></div>
+<div class="cs-blk"><h3 class="cs-h3">Sovereignty in AI</h3><p class="cs-vid-d">A brand communication piece on AI sovereignty — produced for E2E Cloud.</p><div class="cs-embed"><iframe src="https://www.youtube.com/embed/SDGkPaZlsRU?rel=0" title="Sovereignty in AI" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div></div>
+<div class="cs-blk"><h3 class="cs-h3">E2E MyAccount — Product Highlights</h3><p class="cs-vid-d">Product communication structured to communicate product capability to users.</p><div class="cs-embed"><iframe src="https://www.youtube.com/embed/fRW1ai35GXs?rel=0" title="E2E" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div></div>
+</div><footer><a href="https://linkedin.com/in/harrishmara" target="_blank" rel="noopener" class="f-link">LinkedIn</a><button class="f-link" onclick="sP('pg-contact')" type="button">Contact</button></footer></div></div>
+
+<div id="pg-e2e-strategy" class="page">
+<nav class="sub-nav" style="background:rgba(33,79,174,.92);"><button class="sub-brand" onclick="gH()" type="button"><img src="images/logo-transparent.png" alt="HM" draggable="false"><span class="sub-brand-text">Harrish Mara</span></button><button class="sub-hbg" id="hbg4" onclick="toggleFM()" type="button"><span class="sub-hbg-l"></span><span class="sub-hbg-l"></span></button></nav>
+<div class="cs-page" style="background:#214FAE;"><div class="cs-hero"><div class="cs-left"><span class="cs-cat">AI Infrastructure · Competitive Analysis · Strategic Brief · Category Research</span><h1 class="cs-h1">E2E Cloud <span class="dim">Thinking Through a Category</span></h1></div><div class="cs-right"><div class="cs-right-img" style="background-image:url('images/e2e-ecosystem.jpg');"></div></div></div>
+<div class="cs-lead-wrap"><p class="cs-lead">How a structured competitive communication analysis helped identify where AI infrastructure communication was falling short of its audience.</p></div>
+<div class="cs-body">
+<div class="cs-blk"><h3 class="cs-h3">The Problem</h3><p class="cs-p">AI infrastructure is a crowded category. The first question wasn't "what should we say?" — it was "what is everyone else saying, where does it fall short, and what does the audience actually need to hear?"</p></div>
+<div class="cs-blk"><h3 class="cs-h3">The Thinking</h3><p class="cs-p">The competitive analysis was a communication audit — looking at how five companies used video content to reach enterprise buyers, developers, and decision-makers. Content across the category leaned demo-heavy and feature-first, with weak hooks for an audience that hadn't already made up its mind.</p></div>
+<div class="cs-blk"><h3 class="cs-h3">What Was Built</h3><p class="cs-p">A competitive communication analysis covering multiple companies in the AI infrastructure category, with insight on messaging gaps and communication approach, alongside a forward-looking strategic brief on emerging AI production technology.</p><div class="cs-outcome"><span class="cs-out-lbl">Outcome</span><div class="cs-out-t">Delivered a structured view of how the AI infrastructure category was communicating — and where the opportunity was.</div></div><div class="cs-blk"><h3 class="cs-h3">E2E Networks TIR Explainer</h3><p class="cs-vid-d">An explainer on E2E Networks' TIR AI compute platform.</p><div class="cs-embed"><iframe src="https://www.youtube.com/embed/d5bdZI8EfZI?rel=0" title="E2E TIR Explainer" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div></div>
+<div class="cs-blk"><h3 class="cs-h3">vLLM vs Triton</h3><p class="cs-vid-d">A technical explainer comparing vLLM and Triton inference frameworks.</p><div class="cs-embed"><iframe src="https://www.youtube.com/embed/tpIICoFqqcw?rel=0" title="vLLM vs Triton" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+</div><footer><a href="https://linkedin.com/in/harrishmara" target="_blank" rel="noopener" class="f-link">LinkedIn</a><button class="f-link" onclick="sP('pg-contact')" type="button">Contact</button></footer></div></div>
+
+<div id="pg-myshishu" class="page">
+<nav class="sub-nav" style="background:rgba(107,63,160,.92);"><button class="sub-brand" onclick="gH()" type="button"><img src="images/logo-transparent.png" alt="HM" draggable="false"><span class="sub-brand-text">Harrish Mara</span></button><button class="sub-hbg" id="hbg5" onclick="toggleFM()" type="button"><span class="sub-hbg-l"></span><span class="sub-hbg-l"></span></button></nav>
+<div class="cs-page" style="background:#6B3FA0;"><div class="cs-hero"><div class="cs-left"><span class="cs-cat">EdTech · Content Production · Team Leadership · Parenting Platform</span><h1 class="cs-h1">MyShishu <span class="dim">Building a Content Production System</span></h1></div><div class="cs-right"><div class="cs-right-img" style="background-image:url('images/myshishu-screenshot.png');background-position:center top;"></div></div></div>
+<div class="cs-lead-wrap"><p class="cs-lead">How structured production workflows and a close working relationship with the founding team helped translate complex early childhood education into a consistent content library at scale.</p></div>
+<div class="cs-body">
+<div class="cs-blk"><h3 class="cs-h3">The Problem</h3><p class="cs-p">MyShishu was building an educational content platform for parents — translating early childhood development concepts into accessible video content. The gap was between what they knew and what a parent watching a five-minute video could understand, retain, and act on.</p></div>
+<div class="cs-blk"><h3 class="cs-h3">The Thinking</h3><p class="cs-p">Content for a non-expert audience fails most often at the translation stage. Getting that right required working directly with the CEO before each shoot: reviewing scripts, rehearsing delivery, and aligning on what the communication needed to achieve.</p></div>
+<div class="cs-blk"><h3 class="cs-h3">What Was Built</h3><p class="cs-p">A cross-functional production team of five, managed across pre-production, production, and post-production. A production workflow and QC process built from the ground up. A completed educational content library of 60+ assets.</p><div class="cs-outcome"><span class="cs-out-lbl">Outcome</span><div class="cs-out-t">60+ educational content assets delivered. 95% stakeholder approval rating. Production system built from zero.</div></div></div>
+<div class="cs-blk"><h3 class="cs-h3">MyShishu — Brand Communication</h3><p class="cs-vid-d">Brand communication translating the platform's educational vision into clear, parent-facing communication.</p><div class="cs-embed"><iframe src="https://www.youtube.com/embed/_vF067WdhZw?rel=0" title="MyShishu" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div></div>
+</div><footer><a href="https://linkedin.com/in/harrishmara" target="_blank" rel="noopener" class="f-link">LinkedIn</a><button class="f-link" onclick="sP('pg-contact')" type="button">Contact</button></footer></div></div>
+
+<!-- CONTACT -->
+<div id="pg-contact" class="page">
+<nav class="sub-nav"><button class="sub-brand" onclick="gH()" type="button"><img src="images/logo-transparent.png" alt="HM" draggable="false"><span class="sub-brand-text">Harrish Mara</span></button><button class="sub-hbg" id="hbg6" onclick="toggleFM()" type="button"><span class="sub-hbg-l"></span><span class="sub-hbg-l"></span></button></nav>
+<div class="ct-wrap">
+  <div>
+    <p class="ct-ready">Ready to make your product understood?</p>
+    <p class="ct-sub">Tell me what you're building and what the communication challenge is. No pitch needed.</p>
+    <div style="margin-top:48px;">
+      <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--g3);">
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);flex-shrink:0;">LinkedIn</span>
+        <a href="https://linkedin.com/in/harrishmara" target="_blank" rel="noopener" style="color:rgba(255,255,255,.55);text-decoration:none;font-size:14px;transition:color .2s;white-space:nowrap;">linkedin.com/in/harrishmara</a>
+      </div>
+    </div>
+  </div>
+  <div class="cf-form" onclick="event.stopPropagation()" onmousedown="event.stopPropagation()">
+    <div class="cf-g"><label class="cf-lbl">Name</label><input type="text" name="name" onclick="event.stopPropagation()" placeholder="Your name" class="cf-inp" autocomplete="name" tabindex="1"></div>
+    <div class="cf-g"><label class="cf-lbl">Company</label><input type="text" name="company" onclick="event.stopPropagation()" placeholder="Where you're from" class="cf-inp" autocomplete="organization" tabindex="2"></div>
+    <div class="cf-g"><label class="cf-lbl">Email</label><input type="email" name="email" onclick="event.stopPropagation()" placeholder="your@email.com" class="cf-inp" autocomplete="email" tabindex="3"></div>
+    <div class="cf-g"><label class="cf-lbl">Engagement</label>
+      <select name="type" class="cf-inp" onclick="event.stopPropagation()" tabindex="4">
+        <option value="">Select</option>
+        <option>Brand / Product Film</option>
+        <option>Product Narrative &amp; Positioning</option>
+        <option>Communication Retainer</option>
+        <option>Full-time role / Collaboration</option>
+        <option>Not sure — let's talk</option>
+      </select>
+    </div>
+    <div class="cf-g"><label class="cf-lbl">What are you working on?</label><textarea name="message" onclick="event.stopPropagation()" placeholder="Describe the challenge..." class="cf-inp" tabindex="5"></textarea></div>
+    <button type="button" class="cf-sub" tabindex="6" onclick="hFormBtn()">Send Message →</button>
+  </div>
+</div>
+</div>
+
+<script>
+/* ── PAGE NAV ── */
+function sP(id){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'instant'});closeFM();history.pushState({page:id},'',window.location.pathname);}
+function gH(){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.getElementById('main-site').classList.add('active');window.scrollTo({top:0,behavior:'instant'});closeFM();}
+window.addEventListener('popstate',function(e){if(e.state&&e.state.page){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});var t=document.getElementById(e.state.page);if(t)t.classList.add('active');else gH();window.scrollTo({top:0,behavior:'instant'});}else gH();});
+
+/* ── MENU ── */
+var fmOpen=false;
+var hbgIds=['hbg','hbg2','hbg3','hbg4','hbg5','hbg6'];
+function toggleFM(){fmOpen=!fmOpen;document.getElementById('fmenu').classList.toggle('open',fmOpen);hbgIds.forEach(function(id){var el=document.getElementById(id);if(el)el.classList.toggle('open',fmOpen);});document.body.style.overflow=fmOpen?'hidden':'';}
+function closeFM(){fmOpen=false;document.getElementById('fmenu').classList.remove('open');hbgIds.forEach(function(id){var el=document.getElementById(id);if(el)el.classList.remove('open');});document.body.style.overflow='';}
+
+/* ── LOGO TICKER ── */
+var li=0;
+setInterval(function(){document.querySelectorAll('.ls').forEach(function(el,i){el.classList.toggle('on',i===li);});li=(li+1)%4;},2200);
+
+/* work: blur handles transitions */
+
+/* ── WORD-BY-WORD SCROLL BLUR ── */
+(function(){
+  function wrapWords(el){
+    el.innerHTML=el.innerHTML.replace(/(<[^>]+>)|([^\s<>]+)/g,function(m,tag,word){
+      if(tag)return tag;
+      return '<span class="bw">'+word+'</span>';
+    });
+  }
+  var els=Array.prototype.slice.call(document.querySelectorAll('[data-blur]'));
+  els.forEach(wrapWords);
+
+  var TOP_EDGE=0.08;
+  var BOT_EDGE=0.92;
+
+  function update(){
+    var vh=window.innerHeight;
+    var top=vh*TOP_EDGE;
+    var bot=vh*BOT_EDGE;
+
+    els.forEach(function(el){
+      var words=Array.prototype.slice.call(el.querySelectorAll('.bw'));
+      if(!words.length)return;
+      var er=el.getBoundingClientRect();
+      /* Element completely off screen — all blurred */
+      if(er.bottom<0||er.top>vh){
+        words.forEach(function(w){w.classList.add('blur');});
+        return;
+      }
+      words.forEach(function(w,i){
+        var wr=w.getBoundingClientRect();
+        var mid=wr.top+wr.height/2;
+        var shouldBlur=false;
+        if(mid<top){
+          /* Top edge: blur words one by one from first word */
+          /* Word 0 blurs first (deepest in top edge), last word blurs last */
+          var progress=(top-mid)/top; /* 0 at edge, 1 at top of screen */
+          var wordFrac=i/Math.max(words.length-1,1);
+          shouldBlur=progress>wordFrac;
+        } else if(mid>bot){
+          /* Bottom edge: blur words one by one from last word */
+          var progress2=(mid-bot)/(vh-bot);
+          var wordFrac2=(words.length-1-i)/Math.max(words.length-1,1);
+          shouldBlur=progress2>wordFrac2;
+        }
+        if(shouldBlur){w.classList.add('blur');}
+        else{w.classList.remove('blur');}
+      });
+    });
+  }
+
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  window.addEventListener('load',update);
+  setTimeout(update,150);
+})();
+
+/* ── SCROLL TO SECTION (mobile hamburger fix) ── */
+function scrollToId(id){
+  /* Make sure main site is active */
+  if(!document.getElementById('main-site').classList.contains('active')){
+    gH();
+  }
+  setTimeout(function(){
+    var el=document.getElementById(id);
+    if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+  },400);
+}
+
+/* ── SECTION REVEAL ── */
+var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.05,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
+
+/* ── LIGHTBOX ── */
+function openLB(el){document.getElementById('lbImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLB();closeFM();}});
+document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG')e.preventDefault();},{passive:false});
+document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+
+/* ── FORM ── */
+function hFormBtn(){var b=document.querySelector('.cf-sub');b.textContent='Sent ✓';b.style.opacity='.6';b.disabled=true;setTimeout(function(){b.textContent='Send Message →';b.style.opacity='';b.disabled=false;document.querySelectorAll('.cf-form .cf-inp').forEach(function(i){i.value='';});},4000);}
+</script>
+</body>
+</html>
